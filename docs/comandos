@@ -1,0 +1,15 @@
+# Criar um projeto sfdx
+sfdx force:project:create -n nome-projeto 
+
+# Autenticar uma org
+# -r url da instância (omitir para https://login.salesforce.com)
+# -a alias da org
+# -s definir como org padrão
+
+sfdx force:auth:web:login [-r https://test.salesforce.com] -a alias_da_org [-s]
+
+#definir org padrão
+sfdx force:config:set defaultusername=alias_da_org
+
+# listar orgs autenticadas
+sfdx force:org:list
